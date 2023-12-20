@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>CRM Website - View Record</title>
+    <style>
+        body {
+            background-color: #343a40;
+        }
+
+        .record-container {
+            max-width: 400px;
+            margin: auto;
+            border-radius: 15px;
+            margin-top: 50px;
+            padding: 20px;
+            border: 1px solid #dee2e6;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .btn-custom {
+            background-color: #343a40;
+            color: #ffffff;
+        }
+
+        .btn-custom:hover {
+            background-color: #ffffff;
+            border: 2px solid #343a40;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 offset-md-2">
+            <div class="jumbotron">
+                <h1 class="display-4">CRM Record Details</h1>
+                <p class="lead">Details of the CRM record.</p>
+                <hr class="my-4">
+                
+                    <!-- Your record details go here -->
+                    <div class="card">
+                        <h5 class="card-header">Record Details</h5>
+                        <div class="card-body">
+                      
+                          <p class="card-text"><strong>First Name: </strong>{{user_record.First_name}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>Last Name: </strong> {{user_record.Last_name}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>Email: </strong>{{user_record.email}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>Address: </strong>{{user_record.address}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>Created At: </strong>{{user_record.created_at}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>City: </strong>{{user_record.city}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>State: </strong>{{user_record.state}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>Zipcode: </strong>{{user_record.zipcode}}
+                            <br/>
+                            <p class="card-text"></p>
+                            <strong>ID: </strong>{{user_record.id}}
+                            <br/></p>
+                            <a class="btn btn-secondary btn-sm " href="{% url 'back_to_records'%}" role="button">Back to Records</a>
+                            <a class="btn  btn-sm btn-danger" href="{% url 'delete_record' user_record.id %}" role="button">Delete Record</a>
+                            <a class="btn  btn-sm btn-success" href="{% url 'update_record' user_record.id %}" role="button">Update Record</a>
+                        </div>
+                      </div>
+                   
+                  
+                    <!-- End of record details -->
+                   
+                
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.7/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
